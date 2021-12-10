@@ -4,6 +4,7 @@ const arcBlue = "#0B72B9";
 const arcOrange = "#FF9916";
 const arcWhite = "#FFF";
 const arcLight = "#FFBD67";
+const arcGrey = "#444";
 
 const theme = createTheme({
   palette: {
@@ -11,6 +12,7 @@ const theme = createTheme({
       blue: arcBlue,
       orange: arcOrange,
       white: arcWhite,
+      grey: arcGrey,
     },
     primary: {
       main: arcBlue,
@@ -121,7 +123,15 @@ const theme = createTheme({
       fontSize: "1.1rem",
       letterSpacing: ".1rem",
     },
+    learnButton: {
+      borderColor: arcBlue,
+      color: arcBlue,
+      fontFamily: "Roboto",
+      fontWeight: "bold",
+      textTransform: "none",
+      
+    },
   },
 });
 
-export default theme
+export default theme;

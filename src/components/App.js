@@ -7,6 +7,7 @@ import { ThemeProvider } from "@mui/material/styles";
 import theme from "./ui/Theme";
 import { Footer } from "./ui/Footer/index";
 import { Locations } from "../helpers/utils.js";
+import { LandingPage } from "./landingPage/index.js";
 
 export default function App() {
   const [selectedItem, setSelectedItem] = useState(0);
@@ -24,7 +25,7 @@ export default function App() {
         <Routes>
           <Route
             path='/'
-            element={<div style={{ height: "2000px" }}>Home</div>}
+            element={<LandingPage/>}
           />
           <Route path='/services' element={<div>Services</div>} />
           <Route path='/customsoftware' element={<div>Custom Software</div>} />

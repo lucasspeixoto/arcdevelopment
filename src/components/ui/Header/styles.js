@@ -13,8 +13,13 @@ import ListItemText from "@mui/material/ListItemText";
 
 //* <Div />
 export const Div = styled(`div`)(({ theme }) => ({
-  ...theme.mixins.toolbar,
-  marginBottom: "1em",
+  height: "4.5rem",
+  [theme.breakpoints.down("md")]: {
+    height: "4rem",
+  },
+  [theme.breakpoints.down("xs")]: {
+    height: "3.5rem",
+  },
 }));
 
 //* <Img />
@@ -113,7 +118,7 @@ export const StyledMenuIcon = styled(MenuIcon)(({ theme }) => ({
 }));
 
 //* <StyledListItem />
-export const StyledListItem = styled(ListItem)(({ theme, props }) => ({
+export const StyledListItem = styled(ListItem)(({ theme }) => ({
   ...theme.typography.listItem,
   "&.Mui-selected": {
     ...theme.typography.selectedListItem,
