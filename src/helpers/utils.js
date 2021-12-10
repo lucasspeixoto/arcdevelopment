@@ -35,7 +35,7 @@ export const menuOptions = [
 export const services = [
   { name: "Services", link: "/services" },
   { name: "Custom Software", link: "/customsoftware" },
-  { name: "Mobile Development", link: "/mobileapps" },
+  { name: "Android/iOS Development", link: "/mobileapps" },
   { name: "Websites", link: "/websites" },
 ];
 export const revolutions = [

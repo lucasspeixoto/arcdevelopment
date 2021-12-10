@@ -4,6 +4,8 @@ import theme from "../ui/Theme";
 import { styled } from "@mui/material/styles";
 import Button from "@mui/material/Button";
 
+import revolutionBackground from "../../assets/repeatingBackground.svg";
+
 export const useStyles = makeStyles(() => ({
   mainContainer: {
     marginTop: "3em",
@@ -20,21 +22,26 @@ export const useStyles = makeStyles(() => ({
       color: theme.palette.common.blue,
       lineHeight: 1.5,
     },
+    "& .MuiTypography-h3": {
+      fontFamily: "Pacifico",
+      fontWeight: "700",
+      fontSize: "2.5rem",
+      color: theme.palette.common.blue,
+    },
     "& .MuiTypography-h4": {
       fontFamily: "Raleway",
       fontWeight: "700",
-      fontSize: "1.5rem",
+      fontSize: "1.75rem",
       color: theme.palette.common.blue,
       lineHeight: 1.5,
-      marginBottom: 10
+      marginBottom: 10,
     },
     "& .MuiTypography-subtitle1": {
       fontWeight: "300",
-      fontSize: "1.0rem",
+      fontSize: "1.2rem",
       color: theme.palette.common.grey,
     },
   },
-
   animation: {
     maxWidth: "50em",
     minWidth: "21em",
@@ -64,7 +71,7 @@ export const useStyles = makeStyles(() => ({
   },
 
   icon: {
-    width: "9rem",
+    width: "15rem",
     marginLeft: "2em",
     [theme.breakpoints.down("xs")]: {
       marginLeft: 0,
@@ -72,6 +79,32 @@ export const useStyles = makeStyles(() => ({
     },
   },
   serviceContainer: {
+    margin: "2rem 0",
+    padding: "0 4rem",
+    [theme.breakpoints.down("sm")]: {
+      margin: "4rem 0",
+    },
+    [theme.breakpoints.down("xs")]: {
+      padding: "0 1.5rem",
+      margin: "5rem 0",
+    },
+  },
+  servicesItemContainer: {
+    marginBottom: "6rem",
+    [theme.breakpoints.down("sm")]: {
+      marginBottom: "5rem",
+    },
+    [theme.breakpoints.down("xs")]: {
+      marginBottom: "4rem",
+    },
+  },
+  serviceHeader: {
+    marginBottom: ".5rem",
+  },
+  servicesSubtitle: {
+    marginBottom: ".5em",
+  },
+  mobileContainer: {
     margin: "10rem 0",
     padding: "0 2rem",
     [theme.breakpoints.down("sm")]: {
@@ -82,11 +115,32 @@ export const useStyles = makeStyles(() => ({
       margin: "6rem 0",
     },
   },
-  serviceHeader: {
-    marginBottom: ".5rem",
+  revolutionContainer: {
+    backgroundImage: `url(${revolutionBackground})`,
+    backgroundSize: "cover",
+    backgroundRepeat: "no-repeat",
+    backgroundPosition: "center",
+    marginTop: '8em',
+    height: "70rem",
+    textAlign: "center",
+    [theme.breakpoints.down("md")]: {
+      height: "50rem",
+    },
+    [theme.breakpoints.down("xs")]: {
+      height: "40rem",
+    },
+    width: "100%",
   },
-  servicesSubtitle: {
-    marginBottom: ".5em",
+  revolutionCard: {
+    boxShadow: theme.shadows[10],
+    backgroundColor: "rgba(255,255,255,0.8)",
+    padding: "8rem 10rem",
+    [theme.breakpoints.down("md")]: {
+      padding: "6rem 2rem",
+    },
+    [theme.breakpoints.down("xs")]: {
+      padding: "3rem 0.5rem",
+    },
   },
 }));
 
