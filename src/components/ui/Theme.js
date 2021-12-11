@@ -124,12 +124,9 @@ const theme = createTheme({
       letterSpacing: ".1rem",
     },
     learnButton: {
-      borderColor: arcBlue,
-      color: arcBlue,
       fontFamily: "Roboto",
       fontWeight: "bold",
       textTransform: "none",
-      
     },
   },
 });

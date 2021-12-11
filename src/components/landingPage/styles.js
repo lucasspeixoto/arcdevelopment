@@ -5,6 +5,7 @@ import { styled } from "@mui/material/styles";
 import Button from "@mui/material/Button";
 
 import revolutionBackground from "../../assets/repeatingBackground.svg";
+import infoBackground from "../../assets/infoBackground.svg";
 
 export const useStyles = makeStyles(() => ({
   mainContainer: {
@@ -41,6 +42,11 @@ export const useStyles = makeStyles(() => ({
       fontSize: "1.2rem",
       color: theme.palette.common.grey,
     },
+    "& .MuiTypography-subtitle2": {
+      fontWeight: "300",
+      fontSize: "1.25rem",
+      color: theme.palette.common.white,
+    },
   },
   animation: {
     maxWidth: "50em",
@@ -53,6 +59,14 @@ export const useStyles = makeStyles(() => ({
     [theme.breakpoints.down("xs")]: {
       marginLeft: 0,
     },
+  },
+  learnButton: {
+    ...theme.typography.learnButton,
+    fontSize: "0.9rem",
+    borderRadius: 50,
+    borderWidth: 2,
+    height: 40,
+    margin: "1rem 0",
   },
   buttonsContainer: {
     marginTop: "1em",
@@ -120,7 +134,7 @@ export const useStyles = makeStyles(() => ({
     backgroundSize: "cover",
     backgroundRepeat: "no-repeat",
     backgroundPosition: "center",
-    marginTop: '8em',
+    marginTop: "8em",
     height: "70rem",
     textAlign: "center",
     [theme.breakpoints.down("md")]: {
@@ -142,29 +156,25 @@ export const useStyles = makeStyles(() => ({
       padding: "3rem 0.5rem",
     },
   },
+  informationContainer: {
+    padding: "0 .5rem",
+    height: "50rem",
+    backgroundImage: `url(${infoBackground})`,
+    backgroundSize: "cover",
+    backgroundRepeat: "no-repeat",
+    backgroundPosition: "center",
+    textAlign: "center",
+    [theme.breakpoints.down("md")]: {
+      height: "40rem",
+    },
+    [theme.breakpoints.down("xs")]: {
+      height: "30rem",
+      padding: "0 2rem",
+    },
+  },
 }));
 
 //* <EstimateButton />
 export const EstimateButton = styled(Button)(({ theme }) => ({
   ...theme.typography.estimate,
-}));
-
-//* <LearnButtonHero />
-export const LearnButtonHero = styled(Button)(({ theme }) => ({
-  ...theme.typography.learnButton,
-  fontSize: "0.9rem",
-  borderRadius: 50,
-  borderWidth: 2,
-  height: 45,
-  width: 145,
-}));
-
-//* <LearnButton />
-export const LearnButton = styled(Button)(({ theme }) => ({
-  ...theme.typography.learnButton,
-  fontSize: "0.9rem",
-  borderRadius: 50,
-  borderWidth: 2,
-  height: 40,
-  margin: "1rem 0",
 }));

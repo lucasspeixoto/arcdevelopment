@@ -10,24 +10,21 @@ import Lottie from "react-lottie";
 
 import landinganimation from "../../animations/landinganimation/data";
 
-import {
-  EstimateButton,
-  LearnButton,
-  LearnButtonHero,
-  useStyles,
-} from "./styles";
+import { EstimateButton, useStyles } from "./styles";
 
-import { ButtonArrow } from "./../ui/ButtonArrow";
 import theme from "./../ui/Theme";
 
 import customSoftwareIcon from "../../assets/Custom Software Icon.svg";
 import mobileAppsIcon from "../../assets/mobileIcon.svg";
 import websiteIcon from "../../assets/website.svg";
+import { LearnMoreButton } from "../ui/LearnMoreButton";
 
 export const LandingPage = () => {
   const classes = useStyles();
 
   const matchesServiceBlock = useMediaQuery("(max-width:920px)");
+  const matchesInformationBlock = useMediaQuery("(max-width:630px)");
+  const matchesXS = useMediaQuery(theme.breakpoints.down("xs"));
 
   const defaultOptions = {
     loop: true,
@@ -63,14 +60,16 @@ export const LandingPage = () => {
               <EstimateButton variant='contained'>Free Estimate</EstimateButton>
             </Grid>
             <Grid item>
-              <LearnButtonHero variant='outlined'>
-                <span style={{ marginRight: 10 }}>Learn More</span>
-                <ButtonArrow
-                  width={15}
-                  height={15}
-                  fill={theme.palette.common.blue}
-                ></ButtonArrow>
-              </LearnButtonHero>
+              <LearnMoreButton
+                type='big'
+                variant='outlined'
+                marginRight={10}
+                text='Learn More'
+                width={15}
+                height={15}
+                fill={theme.palette.common.blue}
+                color={theme.palette.common.blue}
+              ></LearnMoreButton>
             </Grid>
           </Grid>
         </Grid>
@@ -107,14 +106,16 @@ export const LandingPage = () => {
               Complete digital solutions, from investigation to{" "}
               <span className={classes.celebration}>celebration</span>
             </Typography>
-            <LearnButton variant='outlined'>
-              <span style={{ marginRight: 10 }}>Learn More</span>
-              <ButtonArrow
-                width={15}
-                height={15}
-                fill={theme.palette.common.blue}
-              ></ButtonArrow>
-            </LearnButton>
+            <LearnMoreButton
+              type='small'
+              variant='outlined'
+              marginRight={10}
+              text='Learn More'
+              width={15}
+              height={15}
+              fill={theme.palette.common.blue}
+              color={theme.palette.common.blue}
+            />
           </Grid>
           <Grid item>
             <img
@@ -151,14 +152,16 @@ export const LandingPage = () => {
               {matchesServiceBlock ? null : <br></br>}with either mobile
               platform
             </Typography>
-            <LearnButton variant='outlined'>
-              <span style={{ marginRight: 10 }}>Learn More</span>
-              <ButtonArrow
-                width={15}
-                height={15}
-                fill={theme.palette.common.blue}
-              ></ButtonArrow>
-            </LearnButton>
+            <LearnMoreButton
+              type='small'
+              variant='outlined'
+              marginRight={10}
+              text='Learn More'
+              width={15}
+              height={15}
+              fill={theme.palette.common.blue}
+              color={theme.palette.common.blue}
+            />
           </Grid>
           <Grid item>
             <img
@@ -193,14 +196,16 @@ export const LandingPage = () => {
             <Typography variant='subtitle1'>
               Optimized for search engines, built for speed.
             </Typography>
-            <LearnButton variant='outlined'>
-              <span style={{ marginRight: 10 }}>Learn More</span>
-              <ButtonArrow
-                width={15}
-                height={15}
-                fill={theme.palette.common.blue}
-              ></ButtonArrow>
-            </LearnButton>
+            <LearnMoreButton
+              type='small'
+              variant='outlined'
+              marginRight={10}
+              text='Learn More'
+              width={15}
+              height={15}
+              fill={theme.palette.common.blue}
+              color={theme.palette.common.blue}
+            />
           </Grid>
           <Grid item>
             <img
@@ -213,38 +218,105 @@ export const LandingPage = () => {
       </Grid>
 
       {/* -------- The Revolution Block -------- */}
-      <Grid item>
-        <Grid
-          container
-          alignItems='center'
-          justifyContent='center'
-          className={classes.revolutionContainer}
-        >
-          <Card className={classes.revolutionCard}>
-            <CardContent>
-              <Grid container direction='column' alignItems='center'>
-                <Grid item>
-                  <Typography variant='h3' gutterBottom>
-                    The Revolution
-                  </Typography>
-                </Grid>
-                <Grid item>
-                  <Typography variant='subtitle1'>
-                    Visionary insights coupled with cutting-edge technology is a
-                    recipe for revolution.
-                  </Typography>
-                  <LearnButton variant='outlined'>
-                    <span style={{ marginRight: 10 }}>Learn More</span>
-                    <ButtonArrow
-                      width={15}
-                      height={15}
-                      fill={theme.palette.common.blue}
-                    ></ButtonArrow>
-                  </LearnButton>
-                </Grid>
+      <Grid
+        container
+        alignItems='center'
+        justifyContent='center'
+        className={classes.revolutionContainer}
+      >
+        <Card className={classes.revolutionCard}>
+          <CardContent>
+            <Grid container direction='column' alignItems='center'>
+              <Grid item>
+                <Typography variant='h3' gutterBottom>
+                  The Revolution
+                </Typography>
               </Grid>
-            </CardContent>
-          </Card>
+              <Grid item>
+                <Typography variant='subtitle1'>
+                  Visionary insights coupled with cutting-edge technology is a
+                  recipe for revolution.
+                </Typography>
+                <LearnMoreButton
+                  type='small'
+                  variant='outlined'
+                  marginRight={10}
+                  text='Learn More'
+                  width={15}
+                  height={15}
+                  fill={theme.palette.common.blue}
+                  color={theme.palette.common.blue}
+                />
+              </Grid>
+            </Grid>
+          </CardContent>
+        </Card>
+      </Grid>
+
+      {/* -------- The Information Block -------- */}
+      <Grid
+        item
+        container
+        direction={matchesInformationBlock ? "column" : "row"}
+        alignItems='center'
+        className={classes.informationContainer}
+        justifyContent={matchesInformationBlock ? "space-evenly" : "space-between"}
+      >
+        {/* About Us */}
+        <Grid item style={{marginLeft: matchesInformationBlock ? 0 : '2em'}}>
+          <Grid container direction='column'>
+            <Grid item>
+              <Typography
+                variant='h2'
+                style={{ color: theme.palette.common.white }}
+              >
+                About us
+              </Typography>
+            </Grid>
+          </Grid>
+          <Grid item>
+            <Typography variant='subtitle2'>Let's ger personal.</Typography>
+          </Grid>
+          <Grid item>
+            <LearnMoreButton
+              type='small'
+              variant='outlined'
+              marginRight={10}
+              text='Learn More'
+              width={15}
+              height={15}
+              fill={theme.palette.common.white}
+              color={theme.palette.common.white}
+            />
+          </Grid>
+        </Grid>
+        {/* Contact Us */}
+        <Grid item style={{marginRight: matchesInformationBlock ? 0 : '2em'}}>
+          <Grid container direction='column'>
+            <Grid item>
+              <Typography
+                variant='h2'
+                style={{ color: theme.palette.common.white }}
+              >
+                Contact Us
+              </Typography>
+            </Grid>
+            <Grid item>
+              <Typography variant='subtitle2'>Say Hello!</Typography>
+            </Grid>
+            <Grid item>
+              <LearnMoreButton
+                type='small'
+                variant='outlined'
+                marginRight={10}
+                text='Learn More'
+                width={15}
+                height={15}
+                fill={theme.palette.common.white}
+                color={theme.palette.common.white}
+              />
+            </Grid>
+          </Grid>
         </Grid>
       </Grid>
     </Grid>
