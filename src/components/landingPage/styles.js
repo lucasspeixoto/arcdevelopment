@@ -1,21 +1,13 @@
 import { makeStyles } from "@mui/styles";
 import theme from "../ui/Theme";
 
-import { styled } from "@mui/material/styles";
-import Button from "@mui/material/Button";
-
 import revolutionBackground from "../../assets/repeatingBackground.svg";
 import infoBackground from "../../assets/infoBackground.svg";
 
 export const useStyles = makeStyles(() => ({
   mainContainer: {
     marginTop: "3em",
-    [theme.breakpoints.down("md")]: {
-      marginTop: "2em",
-    },
-    [theme.breakpoints.down("xs")]: {
-      marginTop: "1em",
-    },
+   
     "& .MuiTypography-h2": {
       fontFamily: "Raleway",
       fontWeight: "700",
@@ -49,10 +41,12 @@ export const useStyles = makeStyles(() => ({
     },
   },
   animation: {
-    maxWidth: "50em",
-    minWidth: "21em",
-    marginTop: "2em",
-    marginLeft: "10%",
+    marginLeft: "5%",
+    marginTop: "2rem",
+    maxWidth: "50rem",
+    minWidth: "22rem",
+    width: "100%",
+
     [theme.breakpoints.down("sm")]: {
       maxWidth: "30rem",
     },
@@ -73,10 +67,16 @@ export const useStyles = makeStyles(() => ({
     alignItems: "center",
   },
   heroTextContainer: {
-    minWidth: "21.5em",
-    marginLeft: "1em",
+    minWidth: "22rem",
     [theme.breakpoints.down("xs")]: {
-      marginLeft: 0,
+      padding: "0 0.5rem",
+    },
+  },
+  heroEstimateButton: {
+    width: 145,
+    marginRight: "3rem",
+    [theme.breakpoints.down("md")]: {
+      marginRight: "1.5rem",
     },
   },
   celebration: {
@@ -85,7 +85,7 @@ export const useStyles = makeStyles(() => ({
   },
 
   icon: {
-    width: "15rem",
+    width: "12rem",
     marginLeft: "2em",
     [theme.breakpoints.down("xs")]: {
       marginLeft: 0,
@@ -174,7 +174,3 @@ export const useStyles = makeStyles(() => ({
   },
 }));
 
-//* <EstimateButton />
-export const EstimateButton = styled(Button)(({ theme }) => ({
-  ...theme.typography.estimate,
-}));

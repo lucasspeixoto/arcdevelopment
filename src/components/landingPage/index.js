@@ -1,7 +1,7 @@
 import React from "react";
 
-import { Typography, useMediaQuery } from "@mui/material";
-
+import Typography from "@mui/material/Typography";
+import useMediaQuery from "@mui/material/useMediaQuery";
 import Grid from "@mui/material/Grid";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
@@ -10,7 +10,7 @@ import Lottie from "react-lottie";
 
 import landinganimation from "../../animations/landinganimation/data";
 
-import { EstimateButton, useStyles } from "./styles";
+import { useStyles } from "./styles";
 
 import theme from "./../ui/Theme";
 
@@ -18,13 +18,15 @@ import customSoftwareIcon from "../../assets/Custom Software Icon.svg";
 import mobileAppsIcon from "../../assets/mobileIcon.svg";
 import websiteIcon from "../../assets/website.svg";
 import { LearnMoreButton } from "../ui/LearnMoreButton";
+import { CallToAction } from "../ui/CallToAction";
+import { FreeEstimateButton } from "../ui/FreeEstimateButton";
 
 export const LandingPage = () => {
   const classes = useStyles();
 
   const matchesServiceBlock = useMediaQuery("(max-width:920px)");
   const matchesInformationBlock = useMediaQuery("(max-width:630px)");
- 
+
   const defaultOptions = {
     loop: true,
     autoplay: true,
@@ -36,14 +38,16 @@ export const LandingPage = () => {
 
   return (
     <Grid container direction='column' className={classes.mainContainer}>
+      
       {/* -------- Hero Block -------- */}
       <Grid
+        item
         container
         justifyContent='flex-end'
         alignItems='center'
         direction='row'
       >
-        <Grid sm item className={classes.heroTextContainer}>
+        <Grid item sm className={classes.heroTextContainer}>
           <Typography variant='h2' align='center'>
             Bringing West Coast Technology
             <br />
@@ -56,7 +60,11 @@ export const LandingPage = () => {
             className={classes.buttonsContainer}
           >
             <Grid item>
-              <EstimateButton variant='contained'>Free Estimate</EstimateButton>
+              <FreeEstimateButton
+                variant='contained'
+                text='Free Estimate'
+                className={classes.heroEstimateButton}
+              />
             </Grid>
             <Grid item>
               <LearnMoreButton
@@ -259,10 +267,12 @@ export const LandingPage = () => {
         direction={matchesInformationBlock ? "column" : "row"}
         alignItems='center'
         className={classes.informationContainer}
-        justifyContent={matchesInformationBlock ? "space-evenly" : "space-between"}
+        justifyContent={
+          matchesInformationBlock ? "space-evenly" : "space-between"
+        }
       >
         {/* About Us */}
-        <Grid item style={{marginLeft: matchesInformationBlock ? 0 : '2em'}}>
+        <Grid item style={{ marginLeft: matchesInformationBlock ? 0 : "2em" }}>
           <Grid container direction='column'>
             <Grid item>
               <Typography
@@ -290,7 +300,7 @@ export const LandingPage = () => {
           </Grid>
         </Grid>
         {/* Contact Us */}
-        <Grid item style={{marginRight: matchesInformationBlock ? 0 : '2em'}}>
+        <Grid item style={{ marginRight: matchesInformationBlock ? 0 : "2em" }}>
           <Grid container direction='column'>
             <Grid item>
               <Typography
@@ -318,6 +328,9 @@ export const LandingPage = () => {
           </Grid>
         </Grid>
       </Grid>
+
+      {/* -------- The Call to Action -------- */}
+      <CallToAction />
     </Grid>
   );
 };
