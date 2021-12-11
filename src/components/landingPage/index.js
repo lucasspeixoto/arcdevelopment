@@ -24,8 +24,7 @@ export const LandingPage = () => {
 
   const matchesServiceBlock = useMediaQuery("(max-width:920px)");
   const matchesInformationBlock = useMediaQuery("(max-width:630px)");
-  const matchesXS = useMediaQuery(theme.breakpoints.down("xs"));
-
+ 
   const defaultOptions = {
     loop: true,
     autoplay: true,
