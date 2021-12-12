@@ -6,7 +6,6 @@ import { makeStyles } from "@mui/styles";
 
 const useStyles = makeStyles(() => ({
   estimate: {
-    marginRight: "15px",
     fontFamily: "Pacifico",
     fontSize: "1rem",
     textTransform: "none",

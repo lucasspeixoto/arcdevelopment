@@ -47,10 +47,10 @@ export const CallToAction = () => {
       container
       alignItems='center'
       className={classes.callToActionContainer}
-      direction={matchesMD ? 'column': 'row'}
-      justifyContent={matchesMD ? 'center' : 'space-between'}
+      direction={matchesMD ? "column" : "row"}
+      justifyContent={matchesMD ? "center" : "space-between"}
     >
-      <Grid item style={{ marginLeft: matchesMD ? 0 : "2em" }}>
+      <Grid item>
         <Grid container direction='column'>
           <Grid item>
             <Typography variant='h2'>
@@ -77,7 +77,7 @@ export const CallToAction = () => {
           </Grid>
         </Grid>
       </Grid>
-      <Grid item style={{ marginLeft: matchesMD ? '1em' : "2em" }}>
+      <Grid item>
         <FreeEstimateButton
           variant='contained'
           text='Free Estimate'
