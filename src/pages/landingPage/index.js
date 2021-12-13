@@ -12,14 +12,16 @@ import landinganimation from "../../animations/landinganimation/data";
 
 import { useStyles } from "./styles";
 
-import theme from "./../ui/Theme";
 
 import customSoftwareIcon from "../../assets/Custom Software Icon.svg";
 import mobileAppsIcon from "../../assets/mobileIcon.svg";
 import websiteIcon from "../../assets/website.svg";
-import { LearnMoreButton } from "../ui/LearnMoreButton";
-import { CallToAction } from "../ui/CallToAction";
-import { FreeEstimateButton } from "../ui/FreeEstimateButton";
+import { FreeEstimateButton } from "../../components/ui/FreeEstimateButton";
+import { LearnMoreButton } from './../../components/ui/LearnMoreButton';
+
+import { CallToAction } from './../../components/ui/CallToAction';
+import theme from "../../components/ui/Theme";
+
 
 export const LandingPage = ({ setValue, setSelectedItem }) => {
   const classes = useStyles();

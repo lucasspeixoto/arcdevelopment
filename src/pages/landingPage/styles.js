@@ -1,8 +1,8 @@
 import { makeStyles } from "@mui/styles";
-import theme from "../ui/Theme";
 
 import revolutionBackground from "../../assets/repeatingBackground.svg";
 import infoBackground from "../../assets/infoBackground.svg";
+import theme from "../../components/ui/Theme";
 
 export const useStyles = makeStyles(() => ({
   mainContainer: {
@@ -85,15 +85,17 @@ export const useStyles = makeStyles(() => ({
   },
 
   icon: {
-    width: "12rem",
-    marginLeft: "2em",
-    [theme.breakpoints.down("xs")]: {
+    width: "10rem",
+    marginLeft: "1em",
+    [theme.breakpoints.down("sm")]: {
       marginLeft: 0,
+    },
+    [theme.breakpoints.down("xs")]: {
       width: "7rem",
     },
   },
   serviceContainer: {
-    margin: "2rem 0",
+    margin: "4rem 0",
     padding: "0 4rem",
     [theme.breakpoints.down("sm")]: {
       margin: "4rem 0",

@@ -1,10 +1,10 @@
 import { createTheme } from "@mui/material/styles";
 
 const arcBlue = "#0B72B9";
-const arcOrange = "#FF9916";
+const arcOrange = "#FFBA60";
 const arcWhite = "#FFF";
 const arcLight = "#FFBD67";
-const arcGrey = "#444";
+const arcGrey = "#333";
 
 const theme = createTheme({
   palette: {

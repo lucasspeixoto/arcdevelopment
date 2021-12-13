@@ -40,6 +40,7 @@ const useStyles = makeStyles(() => ({
     marginLeft: "20px",
   },
   menu: {
+    zIndex: "1302",
     "& .MuiPaper-root": {
       backgroundColor: theme.palette.common.blue,
       color: "#fff",
@@ -156,7 +157,7 @@ export const HeaderTabs = ({
           changeTabValue={() => {
             setValue(5);
           }}
-          style={{ marginTop: ".5em", marginRight: ".2em" }}
+          style={{ marginTop: ".7em", marginRight: ".2em" }}
         />
       </Tabs>
 
