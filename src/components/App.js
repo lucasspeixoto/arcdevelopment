@@ -51,7 +51,7 @@ export default function App() {
           <Route path='/websites' element={<div>Website Development</div>} />
           <Route />
         </Routes>
-        {/* <Footer setValue={setValue} setSelectedItem={setSelectedItem} /> */}
+        <Footer setValue={setValue} setSelectedItem={setSelectedItem} />
       </BrowserRouter>
     </ThemeProvider>
   );

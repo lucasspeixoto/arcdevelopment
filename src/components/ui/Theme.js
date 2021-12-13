@@ -27,55 +27,6 @@ const theme = createTheme({
     estimate: {
       marginRight: "10em",
     },
-    drawer: {
-      backgroundColor: arcBlue,
-      color: "#fff",
-    },
-    drawerIconButton: {
-      marginLeft: "auto",
-      color: "#ddd",
-      "&:hover": {
-        backgroundColor: "transparent",
-      },
-    },
-    drawerMenuIcon: {
-      height: "35px",
-      width: "35px",
-    },
-    listItem: {
-      fontSize: "1.2rem",
-      letterSpacing: ".1rem",
-      opacity: 0.7,
-    },
-    selectedListItem: {
-      opacity: 1,
-      color: "#fff",
-      fontWeight: "bold",
-    },
-    listItemEstimate: {
-      fontSize: "1.2rem",
-      letterSpacing: ".1rem",
-      opacity: 0.7,
-      "&:hover": {
-        backgroundColor: arcOrange,
-        opacity: 1,
-      },
-    },
-    selectedListItemEstimate: {
-      backgroundColor: arcOrange,
-      opacity: 1,
-      color: "#fff",
-      fontWeight: "bold",
-    },
-
-    listItemText: {
-      color: "#fff",
-      fontFamily: "Raleway",
-      fontWeight: "bold",
-      textTransform: "none",
-      fontSize: "1.1rem",
-      letterSpacing: ".1rem",
-    },
     learnButton: {
       fontFamily: "Roboto",
       fontWeight: "bold",
