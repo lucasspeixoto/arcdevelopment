@@ -9,8 +9,6 @@ import List from "@mui/material/List";
 import logo from "../../../assets/logo.svg";
 import {
   Div,
-  StyledMenu,
-  StyledMenuItem,
   StyledSwipeableDrawer,
   StyledListItem,
   StyledListItemText,
@@ -20,11 +18,9 @@ import {
   StyledAppBar,
   LogoButton,
   Img,
-  StyledTab,
-  StyledTabs,
 } from "./styles";
-import { menuOptions } from "../../../helpers/utils";
-import { FreeEstimateButton } from "../FreeEstimateButton";
+
+import { HeaderTabs } from "./components/HeaderTabs";
 
 function ElevationScroll({ children }) {
   const trigger = useScrollTrigger({
@@ -49,20 +45,9 @@ export const Header = ({ value, setValue, selectedItem, setSelectedItem }) => {
 
   const [openDrawer, setOpenDrawer] = useState(false);
 
-  const handleChange = (e, value) => {
-    setValue(value);
-  };
 
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
-  };
-  const handleClose = () => {
-    setAnchorEl(null);
-  };
-
-  const handleMenuItemClick = (event, index) => {
-    setAnchorEl(null);
-    setSelectedItem(index);
   };
 
   const routes = [
@@ -81,63 +66,6 @@ export const Header = ({ value, setValue, selectedItem, setSelectedItem }) => {
     { name: "Contact Us", link: "/contact", activeItem: 4 },
   ];
 
-  const tabs = (
-    <React.Fragment>
-      <StyledTabs
-        value={value}
-        onChange={handleChange}
-        textColor='inherit'
-        indicatorColor='secondary'
-      >
-        {routes.map((route, index) => (
-          <StyledTab
-            key={index}
-            aria-controls={route.ariaControls}
-            aria-haspopup={route.ariaHaspopup}
-            aria-expanded={route.ariaExpanded}
-            onMouseOver={route.onMouseOver}
-            label={route.name}
-            component={Link}
-            to={route.link}
-          />
-        ))}
-        <FreeEstimateButton
-          text='Free Estimate'
-          changeTabValue={() => {
-            setValue(5);
-          }}
-          style={{ marginTop: ".5em", marginRight: ".2em" }}
-        />
-      </StyledTabs>
-
-      <StyledMenu
-        id='simple-menu'
-        anchorEl={anchorEl}
-        open={open}
-        onClose={handleClose}
-        MenuListProps={{
-          onMouseLeave: handleClose,
-        }}
-        keepMounted
-      >
-        {menuOptions.map((option, index) => (
-          <StyledMenuItem
-            key={index}
-            component={Link}
-            to={option.Link}
-            onClick={(event) => {
-              handleMenuItemClick(event, index);
-              setValue(1);
-              handleClose();
-            }}
-            selected={index === selectedItem && value === 1}
-          >
-            {option.name}
-          </StyledMenuItem>
-        ))}
-      </StyledMenu>
-    </React.Fragment>
-  );
 
   const drawer = (
     <React.Fragment>
@@ -206,7 +134,16 @@ export const Header = ({ value, setValue, selectedItem, setSelectedItem }) => {
             >
               <Img src={logo} alt='company logo' />
             </LogoButton>
-            {matches ? drawer : tabs}
+            {matches ? (
+              drawer
+            ) : (
+              <HeaderTabs
+                value={value}
+                setValue={setValue}
+                selectedItem={selectedItem}
+                setSelectedItem={setSelectedItem}
+              />
+            )}
           </Toolbar>
         </StyledAppBar>
       </ElevationScroll>

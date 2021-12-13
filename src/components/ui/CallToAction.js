@@ -39,7 +39,7 @@ const useStyles = makeStyles(() => ({
   },
 }));
 
-export const CallToAction = ({ setValue, setSelectedItem }) => {
+export const CallToAction = ({ setValue }) => {
   const classes = useStyles();
   const matchesMD = useMediaQuery(theme.breakpoints.down("md"));
   return (

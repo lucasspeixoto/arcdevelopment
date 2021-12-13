@@ -24,51 +24,8 @@ const theme = createTheme({
     },
   },
   typography: {
-    tabs: {
-      height: "1em",
-      alighItems: "bottom",
-      marginLeft: "auto",
-      textColor: arcWhite,
-      fontSize: "4rem",
-    },
-    selectedTabs: {
-      height: 4,
-      margintRight: "1em",
-      transitionDuration: 200,
-      transitionTimingFunction: "ease",
-      borderRadius: "8px",
-    },
     estimate: {
       marginRight: "10em",
-    },
-    tab: {
-      color: "#fff",
-      fontFamily: "Raleway",
-      fontWeight: "700",
-      textTransform: "none",
-      fontSize: "1rem",
-      letterSpacing: ".1rem",
-      minWidth: 10,
-      marginTop: ".5em",
-      marginLeft: "20px",
-    },
-    menu: {
-      backgroundColor: arcBlue,
-      color: "#fff",
-    },
-    selectedMenu: {
-      opacity: 1,
-      color: "#fff",
-      fontWeight: "bold",
-    },
-
-    menuItem: {
-      fontSize: "1.0rem",
-      letterSpacing: ".1rem",
-      opacity: 0.7,
-      "&:hover": {
-        opacity: 1,
-      },
     },
     drawer: {
       backgroundColor: arcBlue,
