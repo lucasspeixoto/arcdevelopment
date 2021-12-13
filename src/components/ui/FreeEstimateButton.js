@@ -3,6 +3,7 @@ import theme from "./Theme";
 
 import { Button } from "@mui/material";
 import { makeStyles } from "@mui/styles";
+import { Link } from "react-router-dom";
 
 const useStyles = makeStyles(() => ({
   estimate: {
@@ -11,7 +12,7 @@ const useStyles = makeStyles(() => ({
     textTransform: "none",
     color: "#5c5c5c",
     borderRadius: "50px",
-    height: "45px",
+    height: "40px",
     backgroundColor: theme.palette.common.orange,
     "&:hover": {
       backgroundColor: theme.palette.secondary.light,
@@ -19,18 +20,18 @@ const useStyles = makeStyles(() => ({
   },
 }));
 
-export const FreeEstimateButton = ({ text, style, className }) => {
+export const FreeEstimateButton = ({ text, style, className, changeTabValue }) => {
   const classes = useStyles();
-
   return (
-    <React.Fragment>
-      <Button
-        variant='contained'
-        className={`${className} ${classes.estimate}`}
-        style={style}
-      >
-        {text}
-      </Button>
-    </React.Fragment>
+    <Button
+      component={Link}
+      to='/estimate'
+      variant='contained'
+      className={`${className} ${classes.estimate}`}
+      style={style}
+      onClick={() => changeTabValue()}
+    >
+      {text}
+    </Button>
   );
 };

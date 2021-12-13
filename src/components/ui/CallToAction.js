@@ -39,7 +39,7 @@ const useStyles = makeStyles(() => ({
   },
 }));
 
-export const CallToAction = () => {
+export const CallToAction = ({ setValue, setSelectedItem }) => {
   const classes = useStyles();
   const matchesMD = useMediaQuery(theme.breakpoints.down("md"));
   return (
@@ -73,13 +73,15 @@ export const CallToAction = () => {
               height={15}
               fill={theme.palette.common.blue}
               color={theme.palette.common.blue}
+              changeTabValue={() => {
+                setValue(2);
+              }}
             />
           </Grid>
         </Grid>
       </Grid>
       <Grid item>
         <FreeEstimateButton
-          variant='contained'
           text='Free Estimate'
           className={classes.estimateButton}
         />

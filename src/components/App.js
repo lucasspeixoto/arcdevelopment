@@ -25,7 +25,12 @@ export default function App() {
         <Routes>
           <Route
             path='/'
-            element={<LandingPage/>}
+            element={
+              <LandingPage
+                setValue={setValue}
+                setSelectedItem={setSelectedItem}
+              />
+            }
           />
           <Route path='/services' element={<div>Services</div>} />
           <Route path='/customsoftware' element={<div>Custom Software</div>} />

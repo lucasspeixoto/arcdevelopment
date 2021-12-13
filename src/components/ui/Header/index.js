@@ -9,7 +9,6 @@ import List from "@mui/material/List";
 import logo from "../../../assets/logo.svg";
 import {
   Div,
-  EstimateButton,
   StyledMenu,
   StyledMenuItem,
   StyledSwipeableDrawer,
@@ -25,6 +24,7 @@ import {
   StyledTabs,
 } from "./styles";
 import { menuOptions } from "../../../helpers/utils";
+import { FreeEstimateButton } from "../FreeEstimateButton";
 
 function ElevationScroll({ children }) {
   const trigger = useScrollTrigger({
@@ -101,15 +101,15 @@ export const Header = ({ value, setValue, selectedItem, setSelectedItem }) => {
             to={route.link}
           />
         ))}
+        <FreeEstimateButton
+          text='Free Estimate'
+          changeTabValue={() => {
+            setValue(5);
+          }}
+          style={{ marginTop: ".5em", marginRight: ".2em" }}
+        />
       </StyledTabs>
-      <EstimateButton
-        variant='contained'
-        color='secondary'
-        component={Link}
-        to='/estimate'
-      >
-        Free Estimate
-      </EstimateButton>
+
       <StyledMenu
         id='simple-menu'
         anchorEl={anchorEl}

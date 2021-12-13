@@ -1,6 +1,7 @@
 import { Button } from "@mui/material";
 import { makeStyles } from "@mui/styles";
 import React from "react";
+import { Link } from "react-router-dom";
 import { ButtonArrow } from "./ButtonArrow";
 import theme from "./Theme";
 
@@ -10,7 +11,7 @@ const useStyles = makeStyles(() => ({
     fontSize: "0.9rem",
     borderRadius: 50,
     borderWidth: 2,
-    height: 40,
+    height: "40px",
     margin: "1rem 0",
   },
   big: {
@@ -18,7 +19,7 @@ const useStyles = makeStyles(() => ({
     fontSize: "0.9rem",
     borderRadius: 50,
     borderWidth: 2,
-    height: 45,
+    height: "45px",
     width: 145,
   },
 }));
@@ -32,20 +33,24 @@ export const LearnMoreButton = ({
   height,
   fill,
   color,
+  changeTabValue,
+  route
+
 }) => {
   const classes = useStyles();
   const className = type === "small" ? classes.small : classes.big;
 
   return (
-    <React.Fragment>
-      <Button
-        variant={variant}
-        className={className}
-        style={{ color: color, borderColor: color }}
-      >
-        <span style={{ marginRight: marginRight }}>{text}</span>
-        <ButtonArrow width={width} height={height} fill={fill}></ButtonArrow>
-      </Button>
-    </React.Fragment>
+    <Button
+      component={Link}
+      to={route ? route : '/therevolution'}
+      variant={variant}
+      className={className}
+      style={{ color: color, borderColor: color }}
+      onClick={changeTabValue}
+    >
+      <span style={{ marginRight: marginRight }}>{text}</span>
+      <ButtonArrow width={width} height={height} fill={fill}></ButtonArrow>
+    </Button>
   );
 };

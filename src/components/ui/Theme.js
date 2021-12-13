@@ -25,13 +25,21 @@ const theme = createTheme({
   },
   typography: {
     tabs: {
+      height: "1em",
+      alighItems: "bottom",
       marginLeft: "auto",
       textColor: arcWhite,
       fontSize: "4rem",
     },
     selectedTabs: {
-      height: ".08em",
+      height: 4,
+      margintRight: "1em",
+      transitionDuration: 200,
+      transitionTimingFunction: "ease",
       borderRadius: "8px",
+    },
+    estimate: {
+      marginRight: "10em",
     },
     tab: {
       color: "#fff",
@@ -41,20 +49,8 @@ const theme = createTheme({
       fontSize: "1rem",
       letterSpacing: ".1rem",
       minWidth: 10,
+      marginTop: ".5em",
       marginLeft: "20px",
-    },
-    estimate: {
-      marginRight: "15px",
-      fontFamily: "Pacifico",
-      fontSize: "1rem",
-      textTransform: "none",
-      color: "#5c5c5c",
-      borderRadius: "50px",
-      height: "45px",
-      backgroundColor: arcOrange,
-      "&:hover": {
-        backgroundColor: arcLight,
-      },
     },
     menu: {
       backgroundColor: arcBlue,

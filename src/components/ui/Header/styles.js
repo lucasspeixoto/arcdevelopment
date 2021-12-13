@@ -11,6 +11,8 @@ import IconButton from "@mui/material/IconButton";
 import ListItem from "@mui/material/ListItem";
 import ListItemText from "@mui/material/ListItemText";
 
+
+
 //* <Div />
 export const Div = styled(`div`)(({ theme }) => ({
   height: "4.5rem",
@@ -24,19 +26,19 @@ export const Div = styled(`div`)(({ theme }) => ({
 
 //* <Img />
 export const Img = styled(`img`)(({ theme }) => ({
-  height: "5em",
-  [theme.breakpoints.down("lg")]: {
-    height: "4.8em",
-  },
-  [theme.breakpoints.down("xs")]: {
-    height: "4em",
-  },
+  height: "4rem",
+    textTransform: "none",
+    [theme.breakpoints.down("md")]: {
+      height: "4rem",
+    },
+    [theme.breakpoints.down("xs")]: {
+      height: "3.5rem",
+    },
 }));
 
 //* <AppBar />
 export const StyledAppBar = styled(AppBar)(({ theme }) => ({
   zIndex: theme.zIndex.modal + 1,
-  marginBottom: "3em",
   [theme.breakpoints.down("lg")]: {
     marginBottom: "2em",
   },
@@ -62,7 +64,7 @@ export const StyledTabs = styled(Tabs)(({ theme }) => ({
 }));
 
 //* <StyledTab />
-export const StyledTab = styled(Tab)(({ theme }) => ({
+export const StyledTab = styled(Tab)(({ theme, value }) => ({
   ...theme.typography.tab,
 }));
 

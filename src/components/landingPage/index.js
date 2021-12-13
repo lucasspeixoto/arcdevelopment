@@ -21,7 +21,7 @@ import { LearnMoreButton } from "../ui/LearnMoreButton";
 import { CallToAction } from "../ui/CallToAction";
 import { FreeEstimateButton } from "../ui/FreeEstimateButton";
 
-export const LandingPage = () => {
+export const LandingPage = ({ setValue, setSelectedItem }) => {
   const classes = useStyles();
 
   const matchesServiceBlock = useMediaQuery("(max-width:920px)");
@@ -38,7 +38,6 @@ export const LandingPage = () => {
 
   return (
     <Grid container direction='column' className={classes.mainContainer}>
-      
       {/* -------- Hero Block -------- */}
       <Grid
         item
@@ -72,10 +71,12 @@ export const LandingPage = () => {
                 variant='outlined'
                 marginRight={10}
                 text='Learn More'
+                route="/therevolution"
                 width={15}
                 height={15}
                 fill={theme.palette.common.blue}
                 color={theme.palette.common.blue}
+                changeTabValue={() => setValue(2)}
               ></LearnMoreButton>
             </Grid>
           </Grid>
@@ -118,10 +119,12 @@ export const LandingPage = () => {
               variant='outlined'
               marginRight={10}
               text='Learn More'
+              route="/services"
               width={15}
               height={15}
               fill={theme.palette.common.blue}
               color={theme.palette.common.blue}
+              changeTabValue={() => {setValue(1); setSelectedItem(1)}}
             />
           </Grid>
           <Grid item>
@@ -164,10 +167,12 @@ export const LandingPage = () => {
               variant='outlined'
               marginRight={10}
               text='Learn More'
+              route="/services"
               width={15}
               height={15}
               fill={theme.palette.common.blue}
               color={theme.palette.common.blue}
+              changeTabValue={() => {setValue(1); setSelectedItem(2)}}
             />
           </Grid>
           <Grid item>
@@ -208,10 +213,12 @@ export const LandingPage = () => {
               variant='outlined'
               marginRight={10}
               text='Learn More'
+              route="/services"
               width={15}
               height={15}
               fill={theme.palette.common.blue}
               color={theme.palette.common.blue}
+              changeTabValue={() => {setValue(1); setSelectedItem(3)}}
             />
           </Grid>
           <Grid item>
@@ -249,10 +256,12 @@ export const LandingPage = () => {
                   variant='outlined'
                   marginRight={10}
                   text='Learn More'
+                  route="/therevolution"
                   width={15}
                   height={15}
                   fill={theme.palette.common.blue}
                   color={theme.palette.common.blue}
+                  changeTabValue={() => setValue(2)}
                 />
               </Grid>
             </Grid>
@@ -292,10 +301,12 @@ export const LandingPage = () => {
               variant='outlined'
               marginRight={10}
               text='Learn More'
+              route="/about"
               width={15}
               height={15}
               fill={theme.palette.common.white}
               color={theme.palette.common.white}
+              changeTabValue={() => setValue(3)}
             />
           </Grid>
         </Grid>
@@ -319,10 +330,12 @@ export const LandingPage = () => {
                 variant='outlined'
                 marginRight={10}
                 text='Learn More'
+                route="/contact"
                 width={15}
                 height={15}
                 fill={theme.palette.common.white}
                 color={theme.palette.common.white}
+                changeTabValue={() => setValue(4)}
               />
             </Grid>
           </Grid>
@@ -330,7 +343,7 @@ export const LandingPage = () => {
       </Grid>
 
       {/* -------- The Call to Action -------- */}
-      <CallToAction />
+      <CallToAction setValue={setValue} setSelectedItem={setSelectedItem}/>
     </Grid>
   );
 };
