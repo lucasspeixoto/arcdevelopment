@@ -43,17 +43,20 @@ const useStyles = makeStyles(() => ({
     zIndex: "1302",
     "& .MuiPaper-root": {
       backgroundColor: theme.palette.common.blue,
-      color: "#fff",
+      color: theme.palette.common.white,
     },
     "& .Mui-selected": {
       opacity: 1,
-      color: "#fff",
-      fontWeight: "bold",
+      color: theme.palette.common.white,
+      fontWeight: "700",
     },
   },
   menuItem: {
+    fontFamily: "Raleway",
+    fontWeight: "700",
     fontSize: "1.0rem",
     letterSpacing: ".1rem",
+    color: theme.palette.common.white,
     opacity: 0.7,
     "&:hover": {
       opacity: 1,

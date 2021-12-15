@@ -24,6 +24,42 @@ const theme = createTheme({
     },
   },
   typography: {
+    h2: {
+      fontFamily: "Raleway",
+      fontWeight: "700",
+      fontSize: "2.5rem",
+      color: arcBlue,
+      lineHeight: 1.5,
+    },
+    h3: {
+      fontFamily: "Pacifico",
+      fontWeight: "700",
+      fontSize: "2.5rem",
+      color: arcBlue,
+    },
+    h4: {
+      fontFamily: "Raleway",
+      fontWeight: "700",
+      fontSize: "1.75rem",
+      color: arcBlue,
+      lineHeight: 1.5,
+      marginBottom: 10,
+    },
+    subtitle1: {
+      fontWeight: "300",
+      fontSize: "1.2rem",
+      color: arcGrey,
+    },
+    subtitle2: {
+      fontWeight: "300",
+      fontSize: "1.25rem",
+      color: arcWhite,
+    },
+    body1: {
+      color: arcGrey,
+      fontWeight: "300",
+      fontSize: "1rem",
+    },
     estimate: {
       marginRight: "10em",
     },

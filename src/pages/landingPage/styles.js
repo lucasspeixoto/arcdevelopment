@@ -7,37 +7,6 @@ import theme from "../../components/ui/Theme";
 export const useStyles = makeStyles(() => ({
   mainContainer: {
     marginTop: "3em",
-    "& .MuiTypography-h2": {
-      fontFamily: "Raleway",
-      fontWeight: "700",
-      fontSize: "2.5rem",
-      color: theme.palette.common.blue,
-      lineHeight: 1.5,
-    },
-    "& .MuiTypography-h3": {
-      fontFamily: "Pacifico",
-      fontWeight: "700",
-      fontSize: "2.5rem",
-      color: theme.palette.common.blue,
-    },
-    "& .MuiTypography-h4": {
-      fontFamily: "Raleway",
-      fontWeight: "700",
-      fontSize: "1.75rem",
-      color: theme.palette.common.blue,
-      lineHeight: 1.5,
-      marginBottom: 10,
-    },
-    "& .MuiTypography-subtitle1": {
-      fontWeight: "300",
-      fontSize: "1.2rem",
-      color: theme.palette.common.grey,
-    },
-    "& .MuiTypography-subtitle2": {
-      fontWeight: "300",
-      fontSize: "1.25rem",
-      color: theme.palette.common.white,
-    },
   },
   animation: {
     marginLeft: "5%",
@@ -86,9 +55,7 @@ export const useStyles = makeStyles(() => ({
   icon: {
     width: "10rem",
     marginLeft: "1em",
-    '@media only screen and (max-width: 414px)': {
-      
-    },
+    "@media only screen and (max-width: 414px)": {},
     [theme.breakpoints.down("sm")]: {
       marginLeft: 0,
     },
@@ -177,4 +144,3 @@ export const useStyles = makeStyles(() => ({
     },
   },
 }));
-

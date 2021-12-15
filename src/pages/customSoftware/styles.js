@@ -10,42 +10,7 @@ export const useStyles = makeStyles(() => ({
     [theme.breakpoints.down("xs")]: {
       padding: "2rem 1rem 4rem",
     },
-    "& .MuiTypography-h2": {
-      fontFamily: "Raleway",
-      fontWeight: "700",
-      fontSize: "2.5rem",
-      color: theme.palette.common.blue,
-      lineHeight: 1.5,
-    },
-    "& .MuiTypography-h3": {
-      fontFamily: "Pacifico",
-      fontWeight: "700",
-      fontSize: "2.5rem",
-      color: theme.palette.common.blue,
-    },
-    "& .MuiTypography-h4": {
-      fontFamily: "Raleway",
-      fontWeight: "700",
-      fontSize: "1.75rem",
-      color: theme.palette.common.blue,
-      lineHeight: 1.5,
-      marginBottom: 10,
-    },
-    "& .MuiTypography-subtitle1": {
-      fontWeight: "300",
-      fontSize: "1.2rem",
-      color: theme.palette.common.grey,
-    },
-    "& .MuiTypography-subtitle2": {
-      fontWeight: "300",
-      fontSize: "1.25rem",
-      color: theme.palette.common.white,
-    },
-    "& .MuiTypography-body1": {
-      color: theme.palette.common.grey,
-      fontWeight: "300",
-      fontSize: "1rem",
-    },
+
     "& .MuiPaper-root": {
       boxShadow: "none",
     },

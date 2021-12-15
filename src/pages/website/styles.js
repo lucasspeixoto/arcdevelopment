@@ -31,42 +31,27 @@ export const useStyles = makeStyles(() => ({
     },
   },
   sectionContainer: {
-    margin: "3rem 0",
-
+    margin: "2rem 0",
     [theme.breakpoints.down("sm")]: {
-      margin: "2rem 0",
+      margin: "1.5rem 0",
     },
   },
   textContainer: {
-    maxWidth: "20rem",
+    maxWidth: "25rem",
     [theme.breakpoints.down("sm")]: {
       maxWidth: "40rem",
     },
   },
-  animation: {
-    maxWidth: "12rem",
+  textSpan: {
+    fontWeight: "bold",
+    fontStyle: "italic",
   },
-
-  iconContainer: {
-    textAlign: "center",
-    margin: "4rem 0",
-    [theme.breakpoints.down("md")]: {
-      margin: "3rem 0",
-    },
+  image: {
+    width: "12rem",
+    marginLeft: "1rem",
     [theme.breakpoints.down("sm")]: {
-      margin: "2rem 0",
+      marginLeft: 0,
+      marginTop: "0.5rem",
     },
-  },
-  iconWrapper: {
-    margin: "0 4rem",
-    [theme.breakpoints.down("md")]: {
-      margin: "3rem 0",
-    },
-  },
-  icon: {
-    maxWidth: "10rem",
-  },
-  icon2: {
-    maxWidth: "20rem",
   },
 }));

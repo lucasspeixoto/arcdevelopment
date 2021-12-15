@@ -50,10 +50,11 @@ const MobileApps = ({ setValue, setSelectedItem }) => {
             <Grid item sx={{ backgroundColor: "transparent" }}>
               <IconButton
                 component={Link}
-                to='/websites'
+                to='/customsoftware'
                 sx={{ backgroundColor: "transparent" }}
+                onClick={() => setSelectedItem(1)}
               >
-                <img src={backArrow} alt='to Website Development' />
+                <img src={backArrow} alt='to Custom Software Development' />
               </IconButton>
             </Grid>
           </Paper>
@@ -77,8 +78,12 @@ const MobileApps = ({ setValue, setSelectedItem }) => {
           </Grid>
           <Paper sx={{ display: { xs: "none", md: "block" } }}>
             <Grid item>
-              <IconButton component={Link} to='/mobileApps'>
-                <img src={forwardArrow} alt='to iOS/Android App Development' />
+              <IconButton
+                component={Link}
+                to='/websites'
+                onClick={() => setSelectedItem(3)}
+              >
+                <img src={forwardArrow} alt='to Website Development' />
               </IconButton>
             </Grid>
           </Paper>

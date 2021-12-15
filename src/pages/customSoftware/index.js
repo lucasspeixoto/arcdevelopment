@@ -81,6 +81,7 @@ const CustomSoftware = ({ setValue, setSelectedItem }) => {
                 component={Link}
                 to='/websites'
                 sx={{ backgroundColor: "transparent" }}
+                onClick={() => setSelectedItem(3)}
               >
                 <img src={backArrow} alt='to Website Development' />
               </IconButton>
@@ -114,7 +115,11 @@ const CustomSoftware = ({ setValue, setSelectedItem }) => {
           </Grid>
           <Paper sx={{ display: { xs: "none", md: "block" } }}>
             <Grid item>
-              <IconButton component={Link} to='/mobileApps'>
+              <IconButton
+                component={Link}
+                to='/mobileApps'
+                onClick={() => setSelectedItem(2)}
+              >
                 <img src={forwardArrow} alt='to iOS/Android App Development' />
               </IconButton>
             </Grid>

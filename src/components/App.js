@@ -12,6 +12,7 @@ import { LandingPage } from "./../pages/landingPage/index";
 import { Services } from "./../pages/servicesPage/index";
 import CustomSoftware from "../pages/customSoftware/index.js";
 import MobileApps from "../pages/mobileApp/index.js";
+import Websites from "../pages/website/index.js";
 
 export default function App() {
   const [selectedItem, setSelectedItem] = useState(0);
@@ -65,7 +66,12 @@ export default function App() {
               />
             }
           />
-          <Route path='/websites' element={<div>Websites</div>} />
+          <Route
+            path='/websites'
+            element={
+              <Websites setValue={setValue} setSelectedItem={setSelectedItem} />
+            }
+          />
           <Route path='/about' element={<div>About us</div>} />
           <Route path='/therevolution' element={<div>The revolution</div>} />
           <Route path='/contact' element={<div>Contact</div>} />
