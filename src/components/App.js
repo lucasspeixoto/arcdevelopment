@@ -11,6 +11,7 @@ import { Locations } from "../helpers/utils.js";
 import { LandingPage } from "./../pages/landingPage/index";
 import { Services } from "./../pages/servicesPage/index";
 import CustomSoftware from "../pages/customSoftware/index.js";
+import MobileApps from "../pages/mobileApp/index.js";
 
 export default function App() {
   const [selectedItem, setSelectedItem] = useState(0);
@@ -55,7 +56,15 @@ export default function App() {
               />
             }
           />
-          <Route path='/mobileapps' element={<div>Mobile Apps</div>} />
+          <Route
+            path='/mobileapps'
+            element={
+              <MobileApps
+                setValue={setValue}
+                setSelectedItem={setSelectedItem}
+              />
+            }
+          />
           <Route path='/websites' element={<div>Websites</div>} />
           <Route path='/about' element={<div>About us</div>} />
           <Route path='/therevolution' element={<div>The revolution</div>} />
