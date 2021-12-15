@@ -30,6 +30,18 @@ const useStyles = makeStyles(() => ({
     [theme.breakpoints.down("xs")]: {
       padding: "0 1rem",
     },
+    "& .MuiTypography-h2": {
+      fontFamily: "Raleway",
+      fontWeight: "700",
+      fontSize: "2.5rem",
+      color: theme.palette.common.blue,
+      lineHeight: 1.5,
+    },
+    "& .MuiTypography-subtitle2": {
+      fontWeight: "300",
+      fontSize: "1.25rem",
+      color: theme.palette.common.white,
+    },
   },
   estimateButton: {
     width: 145,
@@ -53,13 +65,14 @@ export const CallToAction = ({ setValue }) => {
       <Grid item>
         <Grid container direction='column'>
           <Grid item>
-            <Typography variant='h2'>
+            <Typography variant='h2' paragraph>
               Simple Software.
-              <br />
+            </Typography>
+            <Typography variant='h2' paragraph>
               Revolutionary Results.
             </Typography>
 
-            <Typography variant='subtitle2'>
+            <Typography variant='subtitle2' paragraph>
               Take advantage of the 21st century.
             </Typography>
           </Grid>

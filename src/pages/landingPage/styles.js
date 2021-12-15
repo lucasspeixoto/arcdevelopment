@@ -7,7 +7,6 @@ import theme from "../../components/ui/Theme";
 export const useStyles = makeStyles(() => ({
   mainContainer: {
     marginTop: "3em",
-   
     "& .MuiTypography-h2": {
       fontFamily: "Raleway",
       fontWeight: "700",
@@ -87,6 +86,9 @@ export const useStyles = makeStyles(() => ({
   icon: {
     width: "10rem",
     marginLeft: "1em",
+    '@media only screen and (max-width: 414px)': {
+      
+    },
     [theme.breakpoints.down("sm")]: {
       marginLeft: 0,
     },
