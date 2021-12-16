@@ -28,15 +28,15 @@ export const Header = ({ value, setValue, selectedItem, setSelectedItem }) => {
   return (
     <React.Fragment>
       <ElevationScroll>
-        <StyledAppBar position='fixed'>
+        <StyledAppBar position="fixed">
           <Toolbar disableGutters>
             <LogoButton
               component={Link}
-              to='/'
+              to="/"
               disableRipple
               onClick={() => setValue(0)}
             >
-              <Img src={logo} alt='company logo' />
+              <Img src={logo} alt="company logo" />
             </LogoButton>
             {matches ? (
               <SideDrawerMenu value={value} setValue={setValue} />

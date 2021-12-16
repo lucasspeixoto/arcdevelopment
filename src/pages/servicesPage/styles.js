@@ -36,7 +36,7 @@ export const useStyles = makeStyles(() => ({
       color: theme.palette.common.white,
     },
   },
-  
+
   icon: {
     width: "10rem",
     marginLeft: "1em",

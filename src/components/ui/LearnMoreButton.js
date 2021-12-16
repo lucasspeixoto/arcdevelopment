@@ -34,8 +34,7 @@ export const LearnMoreButton = ({
   fill,
   color,
   changeTabValue,
-  route
-
+  route,
 }) => {
   const classes = useStyles();
   const className = type === "small" ? classes.small : classes.big;
@@ -43,7 +42,7 @@ export const LearnMoreButton = ({
   return (
     <Button
       component={Link}
-      to={route ? route : '/therevolution'}
+      to={route ? route : "/therevolution"}
       variant={variant}
       className={className}
       style={{ color: color, borderColor: color }}

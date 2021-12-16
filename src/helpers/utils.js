@@ -50,4 +50,3 @@ export const about = [
   { name: "History", link: "/about" },
   { name: "Team", link: "/about" },
 ];
-

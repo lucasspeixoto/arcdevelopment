@@ -57,31 +57,31 @@ export const CallToAction = ({ setValue }) => {
   return (
     <Grid
       container
-      alignItems='center'
+      alignItems="center"
       className={classes.callToActionContainer}
       direction={matchesMD ? "column" : "row"}
       justifyContent={matchesMD ? "center" : "space-between"}
     >
       <Grid item>
-        <Grid container direction='column'>
+        <Grid container direction="column">
           <Grid item>
-            <Typography variant='h2' paragraph>
+            <Typography variant="h2" paragraph>
               Simple Software.
             </Typography>
-            <Typography variant='h2' paragraph>
+            <Typography variant="h2" paragraph>
               Revolutionary Results.
             </Typography>
 
-            <Typography variant='subtitle2' paragraph>
+            <Typography variant="subtitle2" paragraph>
               Take advantage of the 21st century.
             </Typography>
           </Grid>
           <Grid item>
             <LearnMoreButton
-              type='small'
-              variant='outlined'
+              type="small"
+              variant="outlined"
               marginRight={10}
-              text='Learn More'
+              text="Learn More"
               width={15}
               height={15}
               fill={theme.palette.common.blue}
@@ -95,7 +95,7 @@ export const CallToAction = ({ setValue }) => {
       </Grid>
       <Grid item>
         <FreeEstimateButton
-          text='Free Estimate'
+          text="Free Estimate"
           className={classes.estimateButton}
         />
       </Grid>

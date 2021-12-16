@@ -20,13 +20,18 @@ const useStyles = makeStyles(() => ({
   },
 }));
 
-export const FreeEstimateButton = ({ text, style, className, changeTabValue }) => {
+export const FreeEstimateButton = ({
+  text,
+  style,
+  className,
+  changeTabValue,
+}) => {
   const classes = useStyles();
   return (
     <Button
       component={Link}
-      to='/estimate'
-      variant='contained'
+      to="/estimate"
+      variant="contained"
       className={`${className} ${classes.estimate}`}
       style={style}
       onClick={() => changeTabValue()}

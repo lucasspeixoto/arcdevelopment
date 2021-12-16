@@ -135,7 +135,7 @@ export const SideDrawerMenu = ({ value, setValue }) => {
             divider
             button
             component={Link}
-            to='/estimate'
+            to="/estimate"
             selected={value === 5}
           >
             <ListItemText disableTypography className={classes.listItemText}>

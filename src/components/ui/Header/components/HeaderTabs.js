@@ -138,8 +138,8 @@ export const HeaderTabs = ({
       <Tabs
         value={value}
         onChange={handleChange}
-        textColor='inherit'
-        indicatorColor='secondary'
+        textColor="inherit"
+        indicatorColor="secondary"
         className={classes.tabs}
       >
         {routes.map((route, index) => (
@@ -156,7 +156,7 @@ export const HeaderTabs = ({
           />
         ))}
         <FreeEstimateButton
-          text='Free Estimate'
+          text="Free Estimate"
           changeTabValue={() => {
             setValue(5);
           }}
@@ -175,7 +175,7 @@ export const HeaderTabs = ({
           vertical: "top",
           horizontal: "left",
         }}
-        id='simple-menu'
+        id="simple-menu"
         anchorEl={anchorEl}
         open={open}
         onClose={handleClose}

@@ -13,7 +13,6 @@ import ecommerce from "../../assets/ecommerce.svg";
 import outreach from "../../assets/outreach.svg";
 import seo from "../../assets/seo.svg";
 
-
 import { CallToAction } from "../../components/ui/CallToAction";
 import theme from "./../../components/ui/Theme";
 import { useStyles } from "./styles";
@@ -25,39 +24,39 @@ const Websites = ({ setValue, setSelectedItem }) => {
   const matchesSM = useMediaQuery(theme.breakpoints.down("sm"));
 
   return (
-    <Grid container direction='column'>
-      <Grid item container direction='column' className={classes.mainContainer}>
+    <Grid container direction="column">
+      <Grid item container direction="column" className={classes.mainContainer}>
         {/*--Heading--*/}
         <Grid
           item
           container
-          direction='row'
-          justifyContent='center'
-          alignItems='center'
+          direction="row"
+          justifyContent="center"
+          alignItems="center"
           className={classes.headingContainer}
         >
           <Paper sx={{ display: { xs: "none", md: "block" } }}>
             <Grid item sx={{ backgroundColor: "transparent" }}>
               <IconButton
                 component={Link}
-                to='/mobileapps'
+                to="/mobileapps"
                 sx={{ backgroundColor: "transparent" }}
                 onClick={() => setSelectedItem(2)}
               >
-                <img src={backArrow} alt='to Mobile Apps Development' />
+                <img src={backArrow} alt="to Mobile Apps Development" />
               </IconButton>
             </Grid>
           </Paper>
           <Grid item className={classes.heading}>
-            <Typography variant='h2' paragraph>
+            <Typography variant="h2" paragraph>
               Website Development
             </Typography>
-            <Typography variant='body1' paragraph>
+            <Typography variant="body1" paragraph>
               Having a website is a necessity in today's world. They give you
               one central, public location to let people know who you are, what
               you do and why you're the best at it.
             </Typography>
-            <Typography variant='body1' paragraph>
+            <Typography variant="body1" paragraph>
               From simply having you hours posted to having a full-fledged
               online store, making yourself as accessible as possible to users
               online drives growth and enables you to reach new customers.
@@ -67,10 +66,10 @@ const Websites = ({ setValue, setSelectedItem }) => {
             <Grid item>
               <IconButton
                 component={Link}
-                to='/customsoftware'
+                to="/customsoftware"
                 onClick={() => setSelectedItem(1)}
               >
-                <img src={forwardArrow} alt='to Custom Software Development' />
+                <img src={forwardArrow} alt="to Custom Software Development" />
               </IconButton>
             </Grid>
           </Paper>
@@ -80,19 +79,19 @@ const Websites = ({ setValue, setSelectedItem }) => {
         <Grid
           item
           container
-          alignItems='center'
+          alignItems="center"
           direction={matchesSM ? "column" : "row"}
           justifyContent={matchesSM ? "center" : "flex-start"}
           className={classes.sectionContainer}
         >
           <Grid item className={classes.textContainer}>
-            <Typography variant='h4' paragraph>
+            <Typography variant="h4" paragraph>
               Analytics
             </Typography>
-            <Typography variant='body1' paragraph>
+            <Typography variant="body1" paragraph>
               Knowledge is power, and data is 21st century gold.
             </Typography>
-            <Typography variant='body1' paragraph>
+            <Typography variant="body1" paragraph>
               Analyzing data can reveal hidden patterns and trends in your
               business, empowering you to make smarter decisions with measurable
               effects.
@@ -113,17 +112,17 @@ const Websites = ({ setValue, setSelectedItem }) => {
           container
           direction={matchesSM ? "column" : "row"}
           justifyContent={matchesSM ? "center" : "flex-end"}
-          alignItems='center'
+          alignItems="center"
           className={classes.sectionContainer}
         >
           <Grid item className={classes.textContainer}>
-            <Typography variant='h4' paragraph>
+            <Typography variant="h4" paragraph>
               E-Commerce
             </Typography>
-            <Typography variant='body1' paragraph>
+            <Typography variant="body1" paragraph>
               It's no secret that people like to shop online.
             </Typography>
-            <Typography variant='body1' paragraph>
+            <Typography variant="body1" paragraph>
               In 2017, over{" "}
               <span className={classes.textSpan}>$2.3 trillion</span> were spent
               on e-commerce stores, and it's time for your slice of that pie.
@@ -133,7 +132,7 @@ const Websites = ({ setValue, setSelectedItem }) => {
             <img
               className={classes.image}
               src={ecommerce}
-              alt='world outline made of dollar signs'
+              alt="world outline made of dollar signs"
             />
           </Grid>
         </Grid>
@@ -143,24 +142,24 @@ const Websites = ({ setValue, setSelectedItem }) => {
           item
           container
           direction={matchesSM ? "column" : "row"}
-          alignItems='center'
+          alignItems="center"
           justifyContent={matchesSM ? "center" : "flex-start"}
           className={classes.sectionContainer}
         >
           <Grid item className={classes.textContainer}>
-            <Typography variant='h4' paragraph>
+            <Typography variant="h4" paragraph>
               Outreach
             </Typography>
-            <Typography variant='body1' paragraph>
+            <Typography variant="body1" paragraph>
               Draw people in with a dazzling website.
             </Typography>
-            <Typography variant='body1' paragraph>
+            <Typography variant="body1" paragraph>
               Showing off your products online is a great way to help customers
               decide what's right for them before visiting in person.
             </Typography>
           </Grid>
           <Grid item>
-            <img className={classes.image} src={outreach} alt='megaphone' />
+            <img className={classes.image} src={outreach} alt="megaphone" />
           </Grid>
         </Grid>
 
@@ -170,17 +169,17 @@ const Websites = ({ setValue, setSelectedItem }) => {
           container
           direction={matchesSM ? "column" : "row"}
           justifyContent={matchesSM ? "center" : "flex-end"}
-          alignItems='center'
+          alignItems="center"
           className={classes.sectionContainer}
         >
           <Grid item className={classes.textContainer}>
-            <Typography variant='h4' paragraph>
+            <Typography variant="h4" paragraph>
               Search Engine Optimization
             </Typography>
-            <Typography variant='body1' paragraph>
+            <Typography variant="body1" paragraph>
               How often have you been to the second page of Google results?
             </Typography>
-            <Typography variant='body1' paragraph>
+            <Typography variant="body1" paragraph>
               If you are like us, probably never.
             </Typography>
           </Grid>
