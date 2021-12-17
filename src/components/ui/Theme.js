@@ -5,11 +5,13 @@ const arcOrange = "#FFBD67";
 const arcWhite = "#FFF";
 const arcLight = "#FFDCAE";
 const arcGrey = "#5c5c5c";
+const arcRed = "#FE1A28";
 
 const theme = createTheme({
   palette: {
     common: {
       blue: arcBlue,
+      red: arcRed,
       orange: arcOrange,
       white: arcWhite,
       grey: arcGrey,
@@ -22,6 +24,9 @@ const theme = createTheme({
       main: arcOrange,
       light: arcLight,
     },
+    tertiary: { 
+      main: arcRed,
+    }
   },
   typography: {
     h2: {

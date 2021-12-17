@@ -42,8 +42,8 @@ export const useStyles = makeStyles(() => ({
     },
   },
   containedButton: {
-    width: 145,
-    height: 45,
+    width: 175,
+    height: 40,
     borderRadius: 50,
     backgroundColor: theme.palette.common.orange,
     color: theme.palette.common.grey,
@@ -57,6 +57,36 @@ export const useStyles = makeStyles(() => ({
     "& .MuiButton-endIcon": {
       color: "#fff",
       marginLeft: 20,
+    },
+  },
+  cancelButton: {
+    width: 110,
+    borderRadius: 20,
+    backgroundColor: theme.palette.common.red,
+    color: theme.palette.common.white,
+    fontSize: "1rem",
+    "&:hover": {
+      backgroundColor: theme.palette.secondary.light,
+    },
+    "& .MuiButton-endIcon": {
+      color: "#fff",
+      marginLeft: 10,
+    },
+  },
+  sendButton: {
+    width: 110,
+    borderRadius: 20,
+    backgroundColor: theme.palette.common.orange,
+    color: theme.palette.common.grey,
+    fontFamily: "Pacifico",
+    textTransform: "none",
+    fontSize: "1rem",
+    "&:hover": {
+      backgroundColor: theme.palette.secondary.light,
+    },
+    "& .MuiButton-endIcon": {
+      color: "#fff",
+      marginLeft: 10,
     },
   },
   background: {

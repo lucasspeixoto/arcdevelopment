@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 import Grid from "@mui/material/Grid";
 import Typography from "@mui/material/Typography";
@@ -8,11 +8,18 @@ import { useStyles } from "./styles";
 import theme from "../../components/ui/Theme";
 import { Button, TextField } from "@mui/material";
 
+import CancelIcon from "@mui/icons-material/Cancel";
 import PhoneIcon from "@mui/icons-material/Phone";
 import EmailIcon from "@mui/icons-material/Email";
 import SendIcon from "@mui/icons-material/Send";
 
-import { useForm, useFormState, Controller } from "react-hook-form";
+import Dialog from "@mui/material/Dialog";
+import DialogActions from "@mui/material/DialogActions";
+import DialogContent from "@mui/material/DialogContent";
+import DialogContentText from "@mui/material/DialogContentText";
+import DialogTitle from "@mui/material/DialogTitle";
+
+import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 import { CallToAction } from "../../components/ui/CallToAction";
@@ -43,13 +50,15 @@ export const Contact = () => {
     resolver: yupResolver(schema),
   });
 
- 
   const classes = useStyles();
   const matchesMD = useMediaQuery(theme.breakpoints.down("md"));
-  //const matchesSM = useMediaQuery(theme.breakpoints.down("sm"));
+
+  const [openConfirmation, setOpenConfirmation] = useState(false);
 
   const sendMessage = (data) => {
-    alert(data);
+    setOpenConfirmation(true);
+    const { name, phone, email, text } = data;
+    console.log(name, phone, email, text);
   };
 
   return (
@@ -180,11 +189,110 @@ export const Contact = () => {
               onClick={handleSubmit(sendMessage)}
               endIcon={<SendIcon />}
             >
-              Submit
+              Send Message
             </Button>
           </Grid>
         </Grid>
       </Grid>
+
+      <Dialog
+        open={openConfirmation}
+        onClose={() => setOpenConfirmation(false)}
+        maxWidth={"xs"}
+        disableEscapeKeyDown={true}
+        style={{ zIndex: "2000" }}
+      >
+        <DialogContent>
+          <Grid container direction='column'>
+            <Grid item>
+              <Typography variant='h4' gutterBottom>
+                Confirm Message
+              </Typography>
+            </Grid>
+            <Grid item container>
+              <TextField
+                style={{ margin: "0.2rem 0" }}
+                label='Name'
+                id='name'
+                required
+                placeholder='Lucas Peixoto'
+                variant='standard'
+                fullWidth
+                {...register("name")}
+                error={errors.name?.message !== undefined}
+                helperText={errors.name?.message}
+                InputLabelProps={{
+                  shrink: true,
+                }}
+              />
+              <TextField
+                style={{ margin: "1.2rem 0" }}
+                label='Email'
+                id='email'
+                required
+                placeholder='johndoe@example.com'
+                variant='standard'
+                fullWidth
+                {...register("email")}
+                error={errors.email?.message !== undefined}
+                helperText={errors.email?.message}
+                InputLabelProps={{
+                  shrink: true,
+                }}
+              />
+
+              <TextField
+                style={{ margin: "0.2rem 0" }}
+                label='Phone'
+                id='phone'
+                placeholder='(99) 99999-9999'
+                variant='standard'
+                required
+                fullWidth
+                {...register("phone")}
+                error={errors.phone?.message !== undefined}
+                helperText={errors.phone?.message}
+                InputLabelProps={{
+                  shrink: true,
+                }}
+              />
+
+              <TextField
+                style={{ margin: "0.6rem 0" }}
+                id='text'
+                variant='outlined'
+                multiline
+                required
+                rows={3}
+                fullWidth
+                placeholder="Hello! We have an idea that we'd just love to share"
+                {...register("text")}
+                error={errors.text?.message !== undefined}
+                helperText={errors.text?.message}
+              />
+            </Grid>
+            <Grid item container justifyContent='space-between'>
+              <Button
+                type='button'
+                variant='contained'
+                endIcon={<CancelIcon />}
+                className={classes.cancelButton}
+                onClick={() => setOpenConfirmation(false)}
+              >
+                Cancel
+              </Button>
+              <Button
+                type='button'
+                variant='contained'
+                className={classes.sendButton}
+                endIcon={<SendIcon />}
+              >
+                Send
+              </Button>
+            </Grid>
+          </Grid>
+        </DialogContent>
+      </Dialog>
       <Grid item container lg={8}>
         <CallToAction />
       </Grid>

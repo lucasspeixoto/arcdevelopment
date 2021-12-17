@@ -15,8 +15,8 @@ import { FreeEstimateButton } from "./FreeEstimateButton";
 const useStyles = makeStyles(() => ({
   callToActionContainer: {
     minHeight: "100%",
-    padding: "0 1rem",
-    height: "40rem",
+    padding: "0 4rem",
+    height: "45rem",
     backgroundImage: `url(${background})`,
     backgroundSize: "cover",
     backgroundRepeat: "no-repeat",
