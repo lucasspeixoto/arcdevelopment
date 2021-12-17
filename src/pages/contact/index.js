@@ -12,7 +12,7 @@ import PhoneIcon from "@mui/icons-material/Phone";
 import EmailIcon from "@mui/icons-material/Email";
 import SendIcon from "@mui/icons-material/Send";
 
-import { useForm } from "react-hook-form";
+import { useForm, useFormState, Controller } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 import { CallToAction } from "../../components/ui/CallToAction";
@@ -37,11 +37,13 @@ export const Contact = () => {
   const {
     register,
     handleSubmit,
-    formState: { errors },
+    formState: { errors, isValid },
   } = useForm({
+    mode: "onTouched",
     resolver: yupResolver(schema),
   });
 
+ 
   const classes = useStyles();
   const matchesMD = useMediaQuery(theme.breakpoints.down("md"));
   //const matchesSM = useMediaQuery(theme.breakpoints.down("sm"));
@@ -119,7 +121,7 @@ export const Contact = () => {
             }}
           />
           <TextField
-            style={{ margin: "0.2rem 0" }}
+            style={{ margin: "1.2rem 0" }}
             label='Email'
             id='email'
             required
@@ -138,7 +140,7 @@ export const Contact = () => {
             style={{ margin: "0.2rem 0" }}
             label='Phone'
             id='phone'
-            placeholder='(11) 99999-9999'
+            placeholder='(99) 99999-9999'
             variant='standard'
             required
             fullWidth
@@ -171,6 +173,7 @@ export const Contact = () => {
             className={classes.buttonContainer}
           >
             <Button
+              disabled={!isValid}
               variant='contained'
               type='button'
               className={classes.containedButton}
