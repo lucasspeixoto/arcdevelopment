@@ -15,6 +15,7 @@ import MobileApps from "../pages/mobileApp/index.js";
 import Websites from "../pages/website/index.js";
 import { Revolution } from "../pages/revolution/index.js";
 import { About } from "../pages/about/index.js";
+import { Contact } from "../pages/contact/index.js";
 
 export default function App() {
   const [selectedItem, setSelectedItem] = useState(0);
@@ -76,7 +77,7 @@ export default function App() {
           />
           <Route path='/therevolution' element={<Revolution />} />
           <Route path='/about' element={<About />} />
-          <Route path='/contact' element={<div>Contact</div>} />
+          <Route path='/contact' element={<Contact />} />
           <Route path='/estimate' element={<div>Free Estimate</div>} />
         </Routes>
         <Footer setValue={setValue} setSelectedItem={setSelectedItem} />

@@ -1,10 +1,10 @@
 import { createTheme } from "@mui/material/styles";
 
 const arcBlue = "#0B72B9";
-const arcOrange = "#FFBA60";
+const arcOrange = "#FFBD67";
 const arcWhite = "#FFF";
-const arcLight = "#FFBD67";
-const arcGrey = "#333";
+const arcLight = "#FFDCAE";
+const arcGrey = "#5c5c5c";
 
 const theme = createTheme({
   palette: {
@@ -67,6 +67,57 @@ const theme = createTheme({
       fontFamily: "Roboto",
       fontWeight: "bold",
       textTransform: "none",
+    },
+  },
+  components: {
+    MuiInputLabel: {
+      styleOverrides: {
+        root: {
+          color: arcBlue,
+          fontSize: "1rem",
+        },
+      },
+    },
+    MuiInput: {
+      styleOverrides: {
+        underline: {
+          "&:before": {
+            borderBottomColor: arcBlue,
+          },
+          "&:hover:not($disabled):not($focused):not($error):before": {
+            borderBottomColor: arcBlue,
+          },
+        },
+      },
+    },
+    MuiOutlinedInput: {
+      styleOverrides: {
+        root: {
+          "&:hover:not($disabled):not($focused):not($error) $notchedOutline": {
+            borderWidth: "2px",
+            borderColor: arcBlue,
+          },
+          "&$error $notchedOutline": {
+            borderWidth: "2px",
+          },
+        },
+        notchedOutline: {
+          borderColor: arcBlue,
+        },
+      },
+    },
+    MuiFormHelperText: {
+      styleOverrides: {
+        root: { 
+          color: "green",
+          fontSize: ".6em",
+        },
+        contained: {
+          
+          marginLeft: 0,
+          marginRight: 0,
+        },
+      },
     },
   },
 });

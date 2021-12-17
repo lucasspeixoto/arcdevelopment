@@ -51,7 +51,7 @@ export const Header = ({ value, setValue, selectedItem, setSelectedItem }) => {
           </Toolbar>
         </StyledAppBar>
       </ElevationScroll>
-      <Div />
+      {/* <Div /> */}
     </React.Fragment>
   );
 };

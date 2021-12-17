@@ -10,7 +10,7 @@ const useStyles = makeStyles(() => ({
     fontFamily: "Pacifico",
     fontSize: "1rem",
     textTransform: "none",
-    color: "#5c5c5c",
+    color: theme.palette.common.grey,
     borderRadius: "50px",
     height: "40px",
     backgroundColor: theme.palette.common.orange,
