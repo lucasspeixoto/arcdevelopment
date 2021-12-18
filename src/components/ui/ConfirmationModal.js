@@ -17,11 +17,11 @@ const useStyles = makeStyles(() => ({
     margin: "1rem 0 1rem 1rem",
     width: 110,
     borderRadius: 20,
-    backgroundColor: theme.palette.common.red,
+    backgroundColor: theme.palette.tertiary.main,
     color: theme.palette.common.white,
     fontSize: "1rem",
     "&:hover": {
-      backgroundColor: theme.palette.secondary.light,
+      backgroundColor: theme.palette.tertiary.light,
     },
     "& .MuiButton-endIcon": {
       color: "#fff",

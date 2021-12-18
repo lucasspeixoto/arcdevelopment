@@ -24,9 +24,10 @@ const theme = createTheme({
       main: arcOrange,
       light: arcLight,
     },
-    tertiary: { 
+    tertiary: {
       main: arcRed,
-    }
+      light: "#F88289",
+    },
   },
   typography: {
     h2: {
@@ -119,6 +120,13 @@ const theme = createTheme({
         contained: {
           marginLeft: 0,
           marginRight: 0,
+        },
+      },
+    },
+    MuiDialog: {
+      styleOverrides: {
+        container: {
+          borderRadius: '50px',
         },
       },
     },

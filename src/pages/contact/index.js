@@ -17,6 +17,7 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 import { CallToAction } from "../../components/ui/CallToAction";
 import { ConfirmationModal } from "../../components/ui/ConfirmationModal";
+import { SnackbarMessage } from "../../components/ui/SnackbarMessage";
 
 const initialFormValue = {
   name: null,
@@ -45,7 +46,6 @@ export const Contact = () => {
   const {
     register,
     watch,
-    handleSubmit,
     reset,
     formState: { errors, isValid },
   } = useForm({
@@ -61,10 +61,11 @@ export const Contact = () => {
 
   const [openConfirmation, setOpenConfirmation] = useState(false);
   const [loading, setLoading] = useState(false);
-
-  const openConfirmationCheck = () => {
-    setOpenConfirmation(true);
-  };
+  const [snackbar, setSnackbar] = useState({
+    open: false,
+    type: "",
+    message: "",
+  });
 
   const onConfirmClick = () => {
     setLoading(true);
@@ -75,6 +76,12 @@ export const Contact = () => {
       setOpenConfirmation(false);
       setLoading(false);
       reset();
+
+      setSnackbar({
+        open: true,
+        type: "success",
+        message: "Message sent successfully",
+      });
     }, 2000);
   };
 
@@ -199,7 +206,7 @@ export const Contact = () => {
               variant='contained'
               type='button'
               className={classes.containedButton}
-              onClick={handleSubmit(openConfirmationCheck)}
+              onClick={() => setOpenConfirmation(true)}
               endIcon={<SendIcon />}
             >
               Send Message
@@ -218,6 +225,15 @@ export const Contact = () => {
         onClick={onConfirmClick}
         loading={loading}
       />
+
+      {snackbar.open && (
+        <SnackbarMessage
+          open={snackbar.open}
+          message={snackbar.message}
+          type={snackbar.type}
+          onClose={setSnackbar}
+        />
+      )}
 
       <Grid item container lg={8}>
         <CallToAction />
