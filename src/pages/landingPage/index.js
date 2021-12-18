@@ -119,7 +119,7 @@ export const LandingPage = ({ setValue, setSelectedItem }) => {
               variant="outlined"
               marginRight={10}
               text="Learn More"
-              route="/services"
+              route="/customsoftware"
               width={15}
               height={15}
               fill={theme.palette.common.blue}
@@ -170,7 +170,7 @@ export const LandingPage = ({ setValue, setSelectedItem }) => {
               variant="outlined"
               marginRight={10}
               text="Learn More"
-              route="/services"
+              route="/mobileapps"
               width={15}
               height={15}
               fill={theme.palette.common.blue}
@@ -219,7 +219,7 @@ export const LandingPage = ({ setValue, setSelectedItem }) => {
               variant="outlined"
               marginRight={10}
               text="Learn More"
-              route="/services"
+              route="/websites"
               width={15}
               height={15}
               fill={theme.palette.common.blue}
