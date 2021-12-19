@@ -47,7 +47,7 @@ export const Contact = () => {
     register,
     watch,
     reset,
-    formState: { errors, isValid },
+    formState: { errors },
   } = useForm({
     mode: "onTouched",
     resolver: yupResolver(schema),
@@ -55,6 +55,9 @@ export const Contact = () => {
   });
 
   const { name, phone, email, text } = watch();
+  const watchFields = watch();
+
+  console.log(watchFields);
 
   const classes = useStyles();
   const matchesMD = useMediaQuery(theme.breakpoints.down("md"));
@@ -69,20 +72,16 @@ export const Contact = () => {
 
   const onConfirmClick = () => {
     setLoading(true);
-    setOpenConfirmation(true);
 
-    console.log(name, phone, email, text);
-    setTimeout(() => {
-      setOpenConfirmation(false);
-      setLoading(false);
-      reset();
+    setOpenConfirmation(false);
+    setLoading(false);
+    reset();
 
-      setSnackbar({
-        open: true,
-        type: "success",
-        message: "Message sent successfully",
-      });
-    }, 2000);
+    setSnackbar({
+      open: true,
+      type: "success",
+      message: "Message sent successfully",
+    });
   };
 
   return (
@@ -202,7 +201,9 @@ export const Contact = () => {
             className={classes.buttonContainer}
           >
             <Button
-              disabled={!isValid}
+              disabled={
+                name == null || phone == null || email == null || text == null
+              }
               variant='contained'
               type='button'
               className={classes.containedButton}
